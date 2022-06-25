@@ -6,7 +6,7 @@
 This repository allows me to track my configuration files in git without
 screwing things up by having a .git folder in my home directory. By use of an
 alias, I can run git commands against this side directory and still treat my
-home directory as the work tree.
+home directory as the work tree. Various configurations are included as submodules.
 
 It was initialized with
 
@@ -20,7 +20,7 @@ To clone it to a new system, run:
 
 ```sh
 alias cfg='/usr/bin/env git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-git clone --bare github.com/gregwwalters/dotfiles $HOME/.dotfiles.git
+git clone --bare --recurse-submodules github.com/gregwwalters/dotfiles $HOME/.dotfiles.git
 cfg checkout
 cfg config --local status.showUntrackedFiles no
 ```
@@ -28,7 +28,7 @@ cfg config --local status.showUntrackedFiles no
 or (for completeness) run this script:
 
 ```sh
-git clone --bare github.com/gregwwalters/dotfiles $HOME/.dotfiles.git
+git clone --bare --recurse-submodules github.com/gregwwalters/dotfiles $HOME/.dotfiles.git
 function cfg {
    /usr/bin/env git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME $@
 }
