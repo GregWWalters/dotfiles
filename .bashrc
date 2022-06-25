@@ -1,0 +1,1 @@
+/Users/greg/.config/bash/bashrc

@@ -1,0 +1,18 @@
+[submodule "sh"]
+	path = .config/sh
+	url = https://github.com/gregwwalters/cfg-sh
+[submodule "bash"]
+	path = .config/bash
+	url = https://github.com/gregwwalters/cfg-bash
+[submodule "zsh"]
+	path = .config/zsh
+	url = https://github.com/gregwwalters/cfg-zsh
+[submodule ".config/bash"]
+	path = .config/bash
+	url = https://github.com/GregWWalters/cfg-bash
+[submodule ".config/sh"]
+	path = .config/sh
+	url = https://github.com/GregWWalters/cfg-sh
+[submodule ".config/zsh"]
+	path = .config/zsh
+	url = https://github.com/GregWWalters/cfg-zsh
