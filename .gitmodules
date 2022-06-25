@@ -16,3 +16,6 @@
 [submodule ".config/zsh"]
 	path = .config/zsh
 	url = https://github.com/GregWWalters/cfg-zsh
+[submodule ".config/git"]
+	path = .config/git
+	url = https://github.com/GregWWalters/cfg-git
