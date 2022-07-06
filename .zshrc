@@ -1,1 +1,1 @@
-/Users/greg/.config/zsh/zshrc
+/Users/greg/.config/zsh/rc
