@@ -1,12 +1,15 @@
-[submodule ".config/bash"]
+[submodule "bash"]
 	path = .config/bash
 	url = git@github.com:GregWWalters/cfg-bash.git
-[submodule ".config/sh"]
+[submodule "sh"]
 	path = .config/sh
 	url = git@github.com:GregWWalters/cfg-sh.git
-[submodule ".config/zsh"]
+[submodule "zsh"]
 	path = .config/zsh
 	url = git@github.com:GregWWalters/cfg-zsh.git
-[submodule ".config/git"]
+[submodule "git"]
 	path = .config/git
 	url = git@github.com:GregWWalters/cfg-git.git
+[submodule "vim"]
+	path = .vim
+	url = git@github.com:GregWWalters/cfg-vim.git
