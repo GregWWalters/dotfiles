@@ -3,7 +3,7 @@
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=${HOME}/.config}
 export XDG_DATA_HOME=${XDG_CONFIG_HOME:=${HOME}/.local/share}
 
-export BASH_CONFIG=${BASH_CONFIG:=${XDG_CONFIG_HOME}/bash}
-source $BASH_CONFIG/rc
+export BASH_CFG_DIR=${BASH_CFG_DIR:=${XDG_CONFIG_HOME}/bash}
+source $BASH_CFG_DIR/rc
 
 # vim:ft=bash
