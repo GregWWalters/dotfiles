@@ -20,7 +20,7 @@ To clone it to a new system, run:
 
 ```sh
 alias cfg='/usr/bin/env git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-git clone --bare --recurse-submodules git@github.com:GregWWalters/dotfiles.git $HOME/.dotfiles.git
+git clone --recurse-submodules git@github.com:GregWWalters/dotfiles.git $HOME/.dotfiles.git
 cfg submodule init
 cfg submodule update
 cfg checkout
@@ -30,7 +30,7 @@ cfg config --local status.showUntrackedFiles no
 or (for completeness) run this script:
 
 ```sh
-git clone --bare --recurse-submodules git@github.com:GregWWalters/dotfiles.git $HOME/.dotfiles.git
+git clone --recurse-submodules git@github.com:GregWWalters/dotfiles.git $HOME/.dotfiles.git
 
 function cfg {
    /usr/bin/env git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME $@
