@@ -1,1 +1,0 @@
-/Users/greg/.config/zsh/rc
