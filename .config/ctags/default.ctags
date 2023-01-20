@@ -1,0 +1,10 @@
+--recurse=yes
+--exclude=.git
+--exclude=tmp/*
+--exclude=log/*
+--exclude=node_modules/*
+--exclude=\*.wip
+--exclude=\*.swp
+--exclude=\*.orig
+--exclude=\*.bk
+--langmap=Sh:+.env
