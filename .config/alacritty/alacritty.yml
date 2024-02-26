@@ -34,7 +34,7 @@ window:
   # to the window manager's recommended size
   #dimensions:
   columns: 100
-  lines: 0
+  lines: 40
 
   # Window position (changes require restart)
   #
@@ -84,7 +84,7 @@ window:
   startup_mode: Windowed
 
   # Window title
-  title: Alacritty
+  #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
@@ -188,6 +188,12 @@ window:
   #  x: 0
   #  y: 0
 
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  #use_thin_strokes: true
+
   # Use built-in font for box drawing characters.
   #
   # If `true`, Alacritty will use a custom built-in font for box drawing
@@ -246,6 +252,10 @@ draw_bold_text_with_bright_colors: true
     #focused_match:
     #  foreground: '#ffffff'
     #  background: '#000000'
+
+    #bar:
+    #  background: '#c5c8c6'
+    #  foreground: '#1d1f21'
 
   # Keyboard hints
   #hints:
@@ -463,6 +473,9 @@ cursor:
 # directory of the parent process will be used.
 #working_directory: None
 
+# Send ESC (\x1b) before characters when alt is pressed.
+#alt_send_esc: true
+
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
 
@@ -578,6 +591,7 @@ cursor:
 #
 #    A full list with available key codes can be found here:
 #    https://docs.rs/winit/*/winit/event/enum.VirtualKeyCode.html#variants
+#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
 #
 #    Instead of using the name of the keys, the `key` field also supports using
 #    the scancode of the desired key. Scancodes have to be specified as a
@@ -878,6 +892,7 @@ cursor:
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
   #- { key: N,              mods: Command,                    action: CreateNewWindow       }
+  #- { key: N,              mods: Command,                    action: SpawnNewInstance      }
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
