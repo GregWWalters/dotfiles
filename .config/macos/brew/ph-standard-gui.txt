@@ -1,0 +1,7 @@
+docker
+lens
+openvpn-connect
+postico
+postman
+redisinsight
+slack

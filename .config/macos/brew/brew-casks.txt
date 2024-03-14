@@ -20,3 +20,9 @@ tor-browser
 visual-studio-code
 vlc
 xquartz
+postico
+openvpn-connect
+slack
+postman
+docker
+lens

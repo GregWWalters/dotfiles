@@ -54,3 +54,4 @@ universal-ctags
 wget
 yarn
 youtube-dl
+awscli
