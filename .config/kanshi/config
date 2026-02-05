@@ -1,0 +1,26 @@
+output 'LG Electronics LG Ultra HD 0x000321C7' {
+	alias $MAIN
+	mode 3840x2160@59.997
+	position 0,0
+	scale 1
+}
+
+output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' {
+	alias $PORTABLE
+	mode 1920x1080@60.000
+	position 3840,0
+	scale 1
+}
+
+profile main-only {
+	output $MAIN position 0,0
+	exec swaymsg output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
+}
+
+profile with-portable {
+	output $MAIN position 0,0
+	output $PORTABLE position 3840,0
+
+	exec swaymsg output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
+	exec swaymsg output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' bg ~/Wallpapers/Gundam/GN01-Exia_01.jpg fill
+}

@@ -18,3 +18,4 @@ elif [ -s "$HOME/.profile" ]; then
 	source "$HOME/.profile"
 fi
 
+. "$HOME/.cargo/env"

@@ -7,3 +7,4 @@ export BASH_CFG_DIR=${BASH_CFG_DIR:=${XDG_CONFIG_HOME}/bash}
 source $BASH_CFG_DIR/rc
 
 # vim:ft=bash
+. "$HOME/.cargo/env"

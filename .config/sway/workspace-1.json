@@ -1,0 +1,120 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "marks": [],
+    "percent": 0.779319371727749,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1593,
+               "width": 2304,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^org\\.mozilla\\.firefox$"
+               // "instance": "^Navigator$",
+               // "machine": "^GWDT$",
+               // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\—\\ Mozilla\\ Firefox$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2067,
+               "width": 2960,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Thunderbird",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^net\\.thunderbird\\.Thunderbird$"
+               // "instance": "^Mail$",
+               // "machine": "^GWDT$",
+               // "title": "^Inbox\\ \\-\\ greg\\@gregwwalters\\.com\\ \\-\\ Mozilla\\ Thunderbird$",
+               // "window_role": "^3pane$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.220680628272251,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "Alacritty",
+            "percent": 0.664485981308411,
+            "swallows": [
+               {
+               "class": "^Alacritty$"
+               // "instance": "^Alacritty$",
+               // "machine": "^GWDT$",
+               // "title": "^Alacritty$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2090,
+               "width": 1870,
+               "x": 1935,
+               "y": 35
+            },
+            "marks": [],
+            "name": "Signal",
+            "percent": 0.335514018691589,
+            "swallows": [
+               {
+               "class": "^Signal$"
+               // "instance": "^signal$",
+               // "machine": "^GWDT$",
+               // "title": "^Signal\\ \\(515\\)$",
+               // "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

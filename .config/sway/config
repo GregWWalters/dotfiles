@@ -1,0 +1,280 @@
+# Sway config file
+# Migrated from i3wm
+# Please see https://github.com/swaywm/sway/wiki for a complete reference!
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:DejaVu Sans Mono,monospace 14
+
+# Idle configuration - lock screen after 300 seconds of inactivity
+# Turn off displays after 600 seconds, turn them back on when resumed
+exec swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f'
+
+# NetworkManager applet
+exec nm-applet --indicator
+
+# Manage displays
+## LG 27" 4K IPS
+output 'LG Electronics LG Ultra HD 0x000321C7' position 0 0
+output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
+## Asus 15.6" 1080p IPS
+output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' position 3840 0
+output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' bg ~/Wallpapers/Gundam/GN01-Exia_01.jpg fill
+
+# Set desktop background - replace with your wallpaper path
+# For solid color: output * bg #332A00 solid_color
+# For wallpaper: output * bg /path/to/wallpaper fill
+output * bg #34344A solid_color
+
+# Start redshift/gammastep (Wayland-compatible version)
+# You may need to install gammastep instead of redshift for Wayland
+exec gammastep
+
+# Start 1Password
+exec --no-startup-id env GDK_BACKEND=x11 1password --silent
+
+# Start ProtonVPN
+exec --no-startup-id env GDK_BACKEND=x11 protonvpn-app --silent
+
+# Start ProtonMail bridge
+exec --no-startup-id protonmail-bridge --silent
+
+# XDG Desktop Portal for screen sharing (important for Wayland)
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# Manage Sway-specific daemons with systemd
+exec_always systemctl --user start sway-session.target
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod normal
+
+# Start a terminal
+bindsym $mod+Return exec alacritty
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start rofi (works on Wayland)
+bindsym $mod+d exec rofi -show drun -mode drun,run
+
+# Change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in horizontal orientation
+bindsym $mod+h split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Define names for default workspaces
+# Primary Screen
+set $ws1 1:一
+set $ws2 2:二
+set $ws3 3:三
+set $ws4 4:四
+set $ws5 5:五
+set $ws6 6:六
+set $ws7 7:七
+set $ws8 8:八
+set $ws9 9:九
+set $ws10 10:十
+# Secondary Screen
+set $ws11 11: 十一
+set $ws12 12: 十二
+set $ws13 13: 十三
+set $ws14 14: 十四
+set $ws15 15: 十五
+set $ws16 16: 十六
+set $ws17 17: 十七
+set $ws18 18: 十八
+set $ws19 19: 十九
+set $ws20 20: 二十
+
+# NOTE: Check your output names with 'swaymsg -t get_outputs'
+# These may be different from X11 names
+# Common Sway output names: DP-1, DP-2, HDMI-A-1, etc.
+# Update these to match your actual output names
+workspace "$ws1" output DP-3
+workspace "$ws2" output DP-3
+workspace "$ws3" output DP-3
+workspace "$ws4" output DP-3
+workspace "$ws5" output DP-3
+workspace "$ws6" output DP-3
+workspace "$ws7" output DP-3
+workspace "$ws8" output DP-3
+workspace "$ws9" output DP-3
+workspace "$ws10" output DP-3
+
+workspace "$ws11" output HDMI-A-1
+workspace "$ws12" output HDMI-A-1
+workspace "$ws13" output HDMI-A-1
+workspace "$ws14" output HDMI-A-1
+workspace "$ws15" output HDMI-A-1
+workspace "$ws16" output HDMI-A-1
+workspace "$ws17" output HDMI-A-1
+workspace "$ws18" output HDMI-A-1
+workspace "$ws19" output HDMI-A-1
+workspace "$ws20" output HDMI-A-1
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Alt+1 workspace number $ws11
+bindsym $mod+Alt+2 workspace number $ws12
+bindsym $mod+Alt+3 workspace number $ws13
+bindsym $mod+Alt+4 workspace number $ws14
+bindsym $mod+Alt+5 workspace number $ws15
+bindsym $mod+Alt+6 workspace number $ws16
+bindsym $mod+Alt+7 workspace number $ws17
+bindsym $mod+Alt+8 workspace number $ws18
+bindsym $mod+Alt+9 workspace number $ws19
+bindsym $mod+Alt+0 workspace number $ws20
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym $mod+Alt+Shift+1 move container to workspace number $ws11
+bindsym $mod+Alt+Shift+2 move container to workspace number $ws12
+bindsym $mod+Alt+Shift+3 move container to workspace number $ws13
+bindsym $mod+Alt+Shift+4 move container to workspace number $ws14
+bindsym $mod+Alt+Shift+5 move container to workspace number $ws15
+bindsym $mod+Alt+Shift+6 move container to workspace number $ws16
+bindsym $mod+Alt+Shift+7 move container to workspace number $ws17
+bindsym $mod+Alt+Shift+8 move container to workspace number $ws18
+bindsym $mod+Alt+Shift+9 move container to workspace number $ws19
+bindsym $mod+Alt+Shift+0 move container to workspace number $ws20
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+mode "(B)lank, (S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym b exec swaylock -f; mode "default"
+        bindsym r exec systemctl reboot
+        bindsym s exec systemctl suspend; mode "default"
+        bindsym l exec swaymsg exit
+        bindsym p exec systemctl poweroff
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "(B)lank, (S)uspend, (L)ogout, (R)eboot, (P)oweroff"
+
+# Resize window mode
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start waybar
+bar {
+        swaybar_command waybar
+}
+
+# Window configuration
+focus_follows_mouse no
+popup_during_fullscreen smart
+default_border pixel 5
+default_floating_border normal 5
+smart_gaps off
+gaps inner 20
+gaps outer 10
+
+# Floating windows - use app_id for Wayland apps
+# You may need to adjust these for Wayland - check with 'swaymsg -t get_tree'
+for_window [app_id="1Password"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+for_window [class="Protonvpn-app"] floating enable
+for_window [class="Proton Mail Bridge"] floating enable
+
+# Media control keys
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+include /etc/sway/config.d/*
