@@ -1,0 +1,24 @@
+
+[cursor]
+vi_mode_style = "Block"
+
+[cursor.style]
+shape = "Block"
+
+[env]
+TERM_BG = "dark"
+TERM_BG_DARK = "true"
+
+[window]
+builtin_box_drawing = true
+columns = 100
+decorations = "none"
+dynamic_title = true
+lines = 40
+opacity = 1.0
+resize_increments = true
+size = 10.0
+startup_mode = "Windowed"
+
+[colors]
+draw_bold_text_with_bright_colors = true

@@ -20,17 +20,16 @@ exec swayidle -w \
 exec nm-applet --indicator
 
 # Manage displays
+## Set desktop background - replace with your wallpaper path
+## For solid color: output * bg #332A00 solid_color
+## For wallpaper: output * bg /path/to/wallpaper fill
+output * bg #34344A solid_color
 ## LG 27" 4K IPS
 output 'LG Electronics LG Ultra HD 0x000321C7' position 0 0
-output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
+output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill #34344A
 ## Asus 15.6" 1080p IPS
 output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' position 3840 0
-output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' bg ~/Wallpapers/Gundam/GN01-Exia_01.jpg fill
-
-# Set desktop background - replace with your wallpaper path
-# For solid color: output * bg #332A00 solid_color
-# For wallpaper: output * bg /path/to/wallpaper fill
-output * bg #34344A solid_color
+output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' bg ~/Wallpapers/Gundam/GN01-Exia_01.jpg fill #34344A
 
 # Start redshift/gammastep (Wayland-compatible version)
 # You may need to install gammastep instead of redshift for Wayland
@@ -276,5 +275,8 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# include local-only config
+include ./local
 
 include /etc/sway/config.d/*
