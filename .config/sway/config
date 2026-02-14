@@ -264,11 +264,11 @@ gaps outer 10
 
 # Floating windows - use app_id for Wayland apps
 # You may need to adjust these for Wayland - check with 'swaymsg -t get_tree'
-for_window [app_id="1Password"] floating enable
-for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="1password"] floating enable
+for_window [app_id="pavucontrol-qt"] floating enable
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
-for_window [class="Protonvpn-app"] floating enable
-for_window [class="Proton Mail Bridge"] floating enable
+for_window [app_id="proton.vpn.app.gtk"] floating enable
+for_window [app_id="ch.proton.bridge-gui"] floating enable
 
 # Media control keys
 bindsym XF86AudioPlay exec playerctl play
