@@ -1,0 +1,11 @@
+# Local-machine-only Sway config
+# Do not commit
+
+# config for laptop keyboard module
+input "12972:18:Framework_Laptop_16_Keyboard_Module_-_ANSI_Keyboard" {
+	xkb_options caps:escape,altwin:swap_lalt_lwin
+	# or load keymap file:
+	# xkb_file ~/.config/xkb/custom
+}
+
+# vim:ft=swayconfig

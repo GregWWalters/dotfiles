@@ -53,3 +53,49 @@ window#waybar {
 #temperature.critical {
     color: #eb4d4b;
 }
+
+/* #backlight-slider { */
+/* 	#slider { */
+/* 		min-height: 0px; */
+/*     min-width: 0px; */
+/*     opacity: 0; */
+/*     background-image: none; */
+/*     border: none; */
+/*     box-shadow: none; */
+/* 	} */
+
+/* 	#trough { */
+/* 		min-height: 80px; */
+/*     min-width: 10px; */
+/*     border-radius: 5px; */
+/*     background-color: black; */
+/* 	} */
+
+/* 	#highlight { */
+/* 		min-width: 10px; */
+/*     border-radius: 5px; */
+/*     background-color: red; */
+/* 	} */
+/* } */
+#backlight-slider slider {
+	min-height: 0px;
+	min-width: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough {
+	min-height: 10px;
+	min-width: 60px;
+	border-radius: 5px;
+	background-color: black;
+}
+
+#backlight-slider highlight {
+	min-width: 10px;
+	border-radius: 5px;
+	background-color: grey;
+}
+

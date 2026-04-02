@@ -1,5 +1,5 @@
-ignore-empty-password
-font DejaVu Sans Mono,monospace
+# ignore-empty-password
+# font DejaVu Sans Mono
 
 indicator-caps-lock
 color 34344A

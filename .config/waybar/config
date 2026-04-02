@@ -4,64 +4,80 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "clock", "tray"],
-    
+    "modules-right": ["backlight/slider","pulseaudio", "network", "cpu", "memory", "temperature", "clock", "battery", "tray"],
+
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
         "format": "{name}"
     },
-    
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    
+
     "sway/window": {
         "max-length": 80
     },
-    
+
+		"battery": {
+			"bat": "BAT1",
+			"adapter": "ACAD",
+			"states": {
+				"warning": 20,
+				"critical": 10
+			},
+			"events": {
+				"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+				"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+			},
+			"format": "{icon}{capacity}% {time}",
+			"format-time": "{H}h{m}m",
+			"format-icons": "🔋"
+		},
+
     "clock": {
         "format": "{:%Y-%m-%d %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-    
+
     "cpu": {
         "format": "CPU {usage}%",
         "tooltip": false
     },
-    
+
     "memory": {
         "format": "MEM {}%"
     },
-    
+
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C"
     },
-    
+
     "network": {
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}",
         "format-disconnected": "Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
     },
-    
+
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "MUTE",
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}%",
+        "format-muted": "🔇{volume}%",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "🕻",
             "portable": "",
-            "car": "",
-            "default": ["", ""]
+            "car": "🚗",
+            "default": ["🔈", ""]
         },
         "on-click": "pavucontrol"
     },
-    
+
     "tray": {
         "icon-size": 21,
         "spacing": 10

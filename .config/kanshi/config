@@ -12,6 +12,11 @@ output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' {
 	scale 1
 }
 
+output 'BOE NE160QDM-NZ6 Unknown' {
+	alias $FRAMEWORK16
+	mode 2560x1600@165.000
+}
+
 profile main-only {
 	output $MAIN position 0,0
 	exec swaymsg output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
@@ -23,4 +28,38 @@ profile with-portable {
 
 	exec swaymsg output 'LG Electronics LG Ultra HD 0x000321C7' bg ~/Wallpapers/Gundam/Barbatos_01.jpg fill
 	exec swaymsg output 'ASUSTek COMPUTER INC MB169CK T3LMTF084548' bg ~/Wallpapers/Gundam/GN01-Exia_01.jpg fill
+}
+
+# Laptop Profiles
+
+profile laptop-with-portable-lid-open {
+	output $PORTABLE position 3840,0
+	output $FRAMEWORK16 enable position 3840,1080
+}
+
+profile laptop-with-portable-lid-closed {
+	output $PORTABLE position 3840,0
+	output $FRAMEWORK16 disable position 3840,1080
+}
+
+profile docked-main-only-lid-open {
+	output $MAIN position 0,0
+	output $FRAMEWORK16 enable position 3840,1080
+}
+
+profile docked-main-only-lid-closed {
+	output $MAIN position 0,0
+	output $FRAMEWORK16 disable position 3840,1080
+}
+
+profile docked-main-plus-portable-lid-open {
+	output $MAIN position 0,0
+	output $PORTABLE position 3840,0
+	output $FRAMEWORK16 enable position 3840,1080
+}
+
+profile docked-main-plus-portable-lid-closed {
+	output $MAIN position 0,0
+	output $PORTABLE position 3840,0
+	output $FRAMEWORK16 disable position 3840,1080
 }
